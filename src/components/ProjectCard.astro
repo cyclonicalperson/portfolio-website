@@ -1,0 +1,45 @@
+---
+const { project } = Astro.props;
+let isModalOpen = false;
+let modalImage = "";
+
+function openModal(imageUrl) {
+	isModalOpen = true;
+	modalImage = imageUrl;
+}
+
+function closeModal() {
+	isModalOpen = false;
+	modalImage = "";
+}
+---
+
+<div class="project-card">
+	<!-- Image Preview Modal -->
+	{isModalOpen && (
+		<div class="modal" onclick="document.querySelector('.modal').style.display='none'">
+			<div class="modal-content" onclick="event.stopPropagation()">
+				<img src={modalImage} alt="Project Overview" class="modal-image" />
+				<button class="modal-close" onclick="document.querySelector('.modal').style.display='none'">X</button>
+			</div>
+		</div>
+	)}
+
+	<!-- Image Section -->
+	<a href="javascript:void(0)" onclick="document.querySelector('.modal').style.display='block'; document.querySelector('.modal img').src='{project.image}'">
+		<div class="image-container">
+			<img src={project.image} alt={project.title} class="project-image" />
+		</div>
+	</a>
+
+	<!-- Project Details -->
+	<div class="project-details">
+		<h4>{project.title}</h4>
+		<p>{project.description}</p>
+	</div>
+
+	<!-- GitHub Icon Below Description -->
+	<a href={project.github} target="_blank" class="github-link">
+		<img src="/images/github-icon.png" alt="GitHub" class="github-icon" />
+	</a>
+</div>
