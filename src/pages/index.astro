@@ -18,26 +18,33 @@ const projects = [
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Pavle Arsenijevic</title>
-	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+	<title>Your Portfolio</title>
 </head>
-<body class="dark">
+<body>
 <!-- Landing Page -->
 <header class="landing-page">
-	<div class="landing-text">
-		<h1>Welcome to My Portfolio.</h1>
-		<p>I am a software engineer focused on building efficient, clean solutions.</p>
-	</div>
-	<div class="landing-image">
-		<img src="/images/cs-illustration.png" alt="Computer Science Illustration" />
+	<div class="landing-content">
+		<div class="landing-text">
+			<h1>Welcome.</h1>
+			<p>My name is Pavle Arsenijevic, a Computer Science student based in Kragujevac, Serbia.
+				I have made a wide range of productivity desktop applications, with a focus on creating clean,
+				well-crafted interfaces that not only look great but also provide a seamless user experience.
+			</p>
+		</div>
+		<div class="landing-image">
+			<img src="/images/cs-illustration.png" alt="CS Illustration">
+		</div>
 	</div>
 </header>
 
 <!-- Projects Section -->
 <main>
 	<section class="projects">
-		<h2>My Projects</h2>
-		<div class="projects-list">
+		<h2>My Work</h2>
+		<p>A collection of projects I've made.</p>
+
+		<!-- Wrap just the cards in a container -->
+		<div class="projects-grid">
 			{projects.map(project => (
 				<ProjectCard project={project} />
 			))}
@@ -45,7 +52,7 @@ const projects = [
 	</section>
 
 	<!-- Contact Section -->
-	<footer class="contact">
+	<section class="contact">
 		<h3>Contact Me</h3>
 		<form action="https://formspree.io/f/your-form-id" method="POST">
 			<input type="text" name="name" placeholder="Your Name" required />
@@ -53,13 +60,13 @@ const projects = [
 			<textarea name="message" placeholder="Your Message" required></textarea>
 			<button type="submit">Send Message</button>
 		</form>
-		<p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
-		<p>Find me on <a href="https://github.com/cyclonicalperson">GitHub</a> | <a href="https://linkedin.com/in/your-linkedin">LinkedIn</a></p>
-	</footer>
+		<p>Email: <a href="mailto:cyclonicalperson@gmail.com">cyclonicalperson@gmail.com</a></p>
+		<p>Find me on <a href="https://github.com/cyclonicalperson">GitHub</a> | <a href="https://www.linkedin.com/in/pavle-arsenijevic-365583334/">LinkedIn</a></p>
+	</section>
 </main>
 
 <footer class="copyright-footer">
-	<p>© 2025 Your Name</p>
+	<p>© 2025 Pavle Arsenijevic</p>
 </footer>
 
 <script>
