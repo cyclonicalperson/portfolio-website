@@ -10,17 +10,27 @@ const projects = [
 ];
 ---
 
+<div class="modal">
+	<img src="" alt="Project Full View" />
+</div>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Your Portfolio</title>
+	<title>Pavle Arsenijevic</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 </head>
-<body>
-<!-- Landing Page (Welcome) -->
+<body class="dark">
+<!-- Landing Page -->
 <header class="landing-page">
-	<h1>Welcome to My Portfolio.</h1>
-	<p>I am a software engineer focused on building efficient, clean solutions.</p>
+	<div class="landing-text">
+		<h1>Welcome to My Portfolio.</h1>
+		<p>I am a software engineer focused on building efficient, clean solutions.</p>
+	</div>
+	<div class="landing-image">
+		<img src="/images/cs-illustration.png" alt="Computer Science Illustration" />
+	</div>
 </header>
 
 <!-- Projects Section -->
@@ -48,9 +58,27 @@ const projects = [
 	</footer>
 </main>
 
-<!-- Optional Footer -->
-<footer>
+<footer class="copyright-footer">
 	<p>© 2025 Your Name</p>
 </footer>
+
+<script>
+	// Modal functionality
+	document.addEventListener('DOMContentLoaded', () => {
+		const modal = document.querySelector('.modal');
+		const modalImg = document.querySelector('.modal img');
+
+		document.querySelectorAll('.project-image').forEach(img => {
+			img.addEventListener('click', () => {
+				modal.style.display = 'flex';
+				modalImg.src = img.src;
+			});
+		});
+
+		modal.addEventListener('click', () => {
+			modal.style.display = 'none';
+		});
+	});
+</script>
 </body>
 </html>
