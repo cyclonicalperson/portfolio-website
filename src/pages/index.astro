@@ -3,10 +3,33 @@ import ProjectCard from '../components/ProjectCard.astro';
 import '../styles/global.css';
 
 const projects = [
-	{ title: 'Software Updater', description: 'Description of Project 1', image: '/images/project1.png', github: 'https://github.com/cyclonicalperson/software-updater' },
-	{ title: 'Microsoft Document Translator', description: 'Description of Project 2', image: '/images/project2.png', github: 'https://github.com/cyclonicalperson/microsoft-document-translator' },
-	{ title: '2048 Game', description: 'Description of Project 3', image: '/images/project3.png', github: 'https://github.com/cyclonicalperson/2048-game' },
-	{ title: 'Encoder-Decoder', description: 'Description of Project 4', image: '/images/project4.png', github: 'https://github.com/cyclonicalperson/custom-cipher-encrypter-decypter' },
+	{ title: 'Software Updater',
+		description: 'A lightweight yet powerful tool for keeping desktop applications up to date.\n' +
+			'It automatically checks for updates, downloads the latest versions, and installs them ' +
+			'without user intervention — designed for minimal disruption and maximum efficiency.',
+		image: '/images/project1.png',
+		github: 'https://github.com/cyclonicalperson/software-updater' },
+
+	{ title: 'Microsoft Document Translator',
+		description: 'A desktop utility that simplifies bulk translation of Microsoft Word documents using ' +
+			'Microsoft’s Azure Translation API.\n' + 'Upload, configure your language pair, and get fully translated ' +
+			'Microsoft Office files (.DOCX, .PPTX or .XLSX) — all in one clean interface.',
+		image: '/images/project2.png',
+		github: 'https://github.com/cyclonicalperson/microsoft-document-translator' },
+
+	{ title: '2048 Game',
+		description: 'A classic implementation of the popular sliding puzzle game 2048 with a crisp UI.\n' +
+			'Built for desktop with custom styling and animations, offering a responsive experience ' +
+			'and clean code structure, perfect for showcasing frontend logic and event handling.',
+		image: '/images/project3.png',
+		github: 'https://github.com/cyclonicalperson/2048-game' },
+
+	{ title: 'Encoder-Decoder',
+		description: 'A versatile encryption/decryption utility for text-based data using custom-built ciphers.\n' +
+			'Great for experimenting with basic cryptography principles, the app supports encoding, decoding, ' +
+			'and key-based cipher customization — useful for secure personal messaging or educational purposes.',
+		image: '/images/project4.png',
+		github: 'https://github.com/cyclonicalperson/custom-cipher-encrypter-decypter' },
 ];
 ---
 
@@ -29,9 +52,9 @@ const projects = [
 		<div class="landing-text">
 			<h1>Welcome.</h1>
 			<p>
-				My name is Pavle Arsenijević, a Computer Science student based in Kragujevac, Serbia.
-				I have made a wide range of productivity desktop applications, with a focus on creating clean,
-				well-crafted interfaces that not only look great but also provide a seamless user experience.
+				My name is Pavle Arsenijevic, a Computer Science student based in Kragujevac, Serbia.
+				I build productivity-focused desktop applications with clean interfaces and seamless user experiences.
+				My work spans from small utilities to fully featured apps — all crafted with precision and purpose.
 			</p>
 		</div>
 		<div class="landing-image">
