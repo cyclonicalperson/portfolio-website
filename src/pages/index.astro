@@ -10,23 +10,26 @@ const projects = [
 ];
 ---
 
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Pavle Arsenijevic – Portfolio</title>
+</head>
+<body>
+
+<!-- Modal (hidden by default) -->
 <div class="modal">
 	<img src="" alt="Project Full View" />
 </div>
 
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Your Portfolio</title>
-</head>
-<body>
 <!-- Landing Page -->
 <header class="landing-page">
 	<div class="landing-content">
 		<div class="landing-text">
 			<h1>Welcome.</h1>
-			<p>My name is Pavle Arsenijevic, a Computer Science student based in Kragujevac, Serbia.
+			<p>
+				My name is Pavle Arsenijevic, a Computer Science student based in Kragujevac, Serbia.
 				I have made a wide range of productivity desktop applications, with a focus on creating clean,
 				well-crafted interfaces that not only look great but also provide a seamless user experience.
 			</p>
@@ -43,11 +46,12 @@ const projects = [
 		<h2>My Work</h2>
 		<p>A collection of projects I've made.</p>
 
-		<!-- Wrap just the cards in a container -->
-		<div class="projects-grid">
-			{projects.map(project => (
-				<ProjectCard project={project} />
-			))}
+		<div class="projects-container">
+			<div class="projects-grid">
+				{projects.map(project => (
+					<ProjectCard project={project} />
+				))}
+			</div>
 		</div>
 	</section>
 
@@ -55,25 +59,32 @@ const projects = [
 	<section class="contact">
 		<h3>Contact Me</h3>
 		<form action="https://formspree.io/f/your-form-id" method="POST">
-			<input type="text" name="name" placeholder="Your Name" required />
-			<input type="email" name="email" placeholder="Your Email" required />
-			<textarea name="message" placeholder="Your Message" required></textarea>
+			<label>
+				<input type="text" name="name" placeholder="Your Name" required />
+			</label>
+			<label>
+				<input type="email" name="email" placeholder="Your Email" required />
+			</label>
+			<label>
+				<textarea name="message" placeholder="Your Message" required></textarea>
+			</label>
 			<button type="submit">Send Message</button>
 		</form>
 		<p>Email: <a href="mailto:cyclonicalperson@gmail.com">cyclonicalperson@gmail.com</a></p>
-		<p>Find me on <a href="https://github.com/cyclonicalperson">GitHub</a> | <a href="https://www.linkedin.com/in/pavle-arsenijevic-365583334/">LinkedIn</a></p>
+		<p>Find me on <a href="https://github.com/cyclonicalperson">GitHub</a> |
+			<a href="https://www.linkedin.com/in/pavle-arsenijevic-365583334/">LinkedIn</a></p>
 	</section>
 </main>
 
+<!-- Footer -->
 <footer class="copyright-footer">
 	<p>© 2025 Pavle Arsenijevic</p>
 </footer>
 
 <script>
-	// Modal functionality
 	document.addEventListener('DOMContentLoaded', () => {
 		const modal = document.querySelector('.modal');
-		const modalImg = document.querySelector('.modal img');
+		const modalImg = modal.querySelector('img');
 
 		document.querySelectorAll('.project-image').forEach(img => {
 			img.addEventListener('click', () => {
