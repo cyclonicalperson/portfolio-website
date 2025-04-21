@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
-body {
-    font-family: 'Inter', sans-serif;
+html, body {
+    width: 100%;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
-    background-color:  #121212;
-    color: #ffffff;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Landing */
+/* Landing Page */
 .landing-page {
+    background: #0d1117;
+    color: white;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -48,21 +50,16 @@ body {
 }
 
 /* Projects Section */
-.projects {
-    padding: 60px 20px;
+.projects-section {
+    background: white;
+    color: #111;
+    padding: 100px 20px 80px;
     text-align: center;
+    position: relative;
+    clip-path: ellipse(140% 85% at 50% 50%);
 }
 
-.projects h2 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-}
-
-.projects p {
-    margin-bottom: 50px;
-}
-
-.projects-container {
+.projects-content {
     max-width: 1000px;
     margin: 0 auto;
 }
@@ -71,6 +68,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    margin-top: 40px;
 }
 
 /* Project Card */
@@ -138,36 +136,41 @@ body {
 }
 
 /* Contact Section */
-.contact {
-    width: 100%;
-    background: #f9f9f9;
-    color: #333;
+.contact-section {
+    background: #0d1117;
+    color: white;
     padding: 60px 20px;
     text-align: center;
-    border-top: 2px solid #ddd;
+    border-top: 2px solid #111;
 }
 
-.contact input,
-.contact textarea {
-    width: 100%;
+.contact-section form {
     max-width: 500px;
-    margin: 10px auto;
-    padding: 12px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    display: block;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.contact button {
-    padding: 12px 24px;
-    font-size: 1rem;
-    background-color: #333;
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 12px;
+    background: #111;
     color: white;
+    border: 1px solid #444;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.contact-section button {
+    padding: 12px 24px;
+    background: white;
+    color: #0d1117;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 20px;
+    font-weight: bold;
 }
 
 /* Modal */
