@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .landing-content {
+        flex-direction: column;
+    }
+}
+
 html, body {
     width: 100%;
     overflow-x: hidden;
@@ -56,7 +66,6 @@ html, body {
     padding: 100px 20px 80px;
     text-align: center;
     position: relative;
-    clip-path: ellipse(140% 85% at 50% 50%);
 }
 
 .projects-content {
@@ -69,24 +78,33 @@ html, body {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 40px;
+    align-items: stretch;
 }
 
 /* Project Card */
 .project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     background-color: #1e1e1e;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     color: white;
-    transition: transform 0.3s ease;
+    border: 3px solid #444;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
 .project-card:hover {
-    transform: scale(1.02);
+    transform: scale(1.015);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .image-container {
     height: 200px;
     overflow: hidden;
+    border-bottom: 2px solid #333;
 }
 
 .project-image {
@@ -94,13 +112,24 @@ html, body {
     height: 100%;
     object-fit: cover;
     object-position: top;
-    cursor: pointer;
+    display: block;
+    border-radius: 0;
+    image-rendering: auto;
+    transition: none;
 }
 
 .project-details {
     padding: 20px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.project-details p {
+    min-height: 60px; /* Enough for 2–3 lines */
+    margin-bottom: 15px;
 }
 
 .project-details h4 {
@@ -110,9 +139,11 @@ html, body {
 
 .project-details p {
     font-size: 1rem;
-    margin-bottom: 15px;
+    max-width: 90%;
+    margin: 0 auto 15px;
 }
 
+/* GitHub Icon */
 .github-link {
     display: flex;
     justify-content: center;
@@ -171,6 +202,7 @@ html, body {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+    align-self: center;
 }
 
 /* Modal */

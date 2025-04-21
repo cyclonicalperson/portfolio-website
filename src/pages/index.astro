@@ -3,33 +3,10 @@ import ProjectCard from '../components/ProjectCard.astro';
 import '../styles/global.css';
 
 const projects = [
-	{ title: 'Software Updater',
-		description: 'A lightweight yet powerful tool for keeping desktop applications up to date.\n' +
-			'It automatically checks for updates, downloads the latest versions, and installs them ' +
-			'without user intervention — designed for minimal disruption and maximum efficiency.',
-		image: '/images/project1.png',
-		github: 'https://github.com/cyclonicalperson/software-updater' },
-
-	{ title: 'Microsoft Document Translator',
-		description: 'A desktop utility that simplifies bulk translation of Microsoft Word documents using ' +
-			'Microsoft’s Azure Translation API.\n' + 'Upload, configure your language pair, and get fully translated ' +
-			'Microsoft Office files (.DOCX, .PPTX or .XLSX) — all in one clean interface.',
-		image: '/images/project2.png',
-		github: 'https://github.com/cyclonicalperson/microsoft-document-translator' },
-
-	{ title: '2048 Game',
-		description: 'A classic implementation of the popular sliding puzzle game 2048 with a crisp UI.\n' +
-			'Built for desktop with custom styling and animations, offering a responsive experience ' +
-			'and clean code structure, perfect for showcasing frontend logic and event handling.',
-		image: '/images/project3.png',
-		github: 'https://github.com/cyclonicalperson/2048-game' },
-
-	{ title: 'Encoder-Decoder',
-		description: 'A versatile encryption/decryption utility for text-based data using custom-built ciphers.\n' +
-			'Great for experimenting with basic cryptography principles, the app supports encoding, decoding, ' +
-			'and key-based cipher customization — useful for secure personal messaging or educational purposes.',
-		image: '/images/project4.png',
-		github: 'https://github.com/cyclonicalperson/custom-cipher-encrypter-decypter' },
+	{ title: 'Software Updater', description: 'A lightweight tool that automatically checks for and installs updates for desktop applications with minimal user interaction.', image: '/images/project1.png', github: 'https://github.com/cyclonicalperson/software-updater' },
+	{ title: 'Microsoft Document Translator', description: 'A GUI utility that translates DOCX files in bulk using Microsoft Azure Translation API.', image: '/images/project2.png', github: 'https://github.com/cyclonicalperson/microsoft-document-translator' },
+	{ title: '2048 Game', description: 'A clean, desktop version of the classic 2048 game featuring animations and intuitive controls.', image: '/images/project3.png', github: 'https://github.com/cyclonicalperson/2048-game' },
+	{ title: 'Encoder-Decoder', description: 'An educational tool to encode and decode messages using custom ciphers. Great for experimenting with cryptography.', image: '/images/project4.png', github: 'https://github.com/cyclonicalperson/custom-cipher-encrypter-decypter' },
 ];
 ---
 
@@ -37,6 +14,29 @@ const projects = [
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- SEO Meta Tags -->
+	<meta name="title" content="Pavle Arsenijević – Portfolio" />
+	<meta name="description" content="Portfolio of Pavle Arsenijevic – software engineer focused on desktop productivity apps and clean, functional design." />
+	<meta name="author" content="Pavle Arsenijevic" />
+	<meta name="robots" content="index, follow" />
+
+	<!-- Open Graph (for social sharing) -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://pavlearsenijevic.netlify.app/" />
+	<meta property="og:title" content="Pavle Arsenijević – Portfolio" />
+	<meta property="og:description" content="A collection of well-designed and functional desktop projects built by Pavle Arsenijevic." />
+	<meta property="og:image" content="https://pavlearsenijevic.netlify.app/images/cs-illustration.png" />
+
+	<!-- Twitter Cards -->
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Pavle Arsenijević – Portfolio" />
+	<meta name="twitter:description" content="Software engineer portfolio of Pavle Arsenijevic" />
+	<meta name="twitter:image" content="https://pavlearsenijevic.netlify.app/images/cs-illustration.png" />
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
 	<title>Pavle Arsenijević – Portfolio</title>
 </head>
 <body>
@@ -52,8 +52,8 @@ const projects = [
 		<div class="landing-text">
 			<h1>Welcome.</h1>
 			<p>
-				My name is Pavle Arsenijevic, a Computer Science student based in Kragujevac, Serbia.
-				I build productivity-focused desktop applications with clean interfaces and seamless user experiences.
+				My name is Pavle Arsenijević, a Computer Science student based in Kragujevac, Serbia.
+				I make productivity-focused desktop applications with clean interfaces and seamless user experiences.
 				My work spans from small utilities to fully featured apps — all crafted with precision and purpose.
 			</p>
 		</div>
@@ -79,7 +79,7 @@ const projects = [
 <!-- Contact Section -->
 <section class="contact-section">
 	<h3>Contact Me</h3>
-	<form action="https://formspree.io/f/your-form-id" method="POST">
+	<form action="https://formspree.io/f/xovdalgg" method="POST">
 		<label>
 			<input type="text" name="name" placeholder="Your Name" required />
 		</label>
