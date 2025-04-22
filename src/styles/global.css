@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 @media (max-width: 768px) {
     .projects-grid {
@@ -76,37 +76,6 @@ html, body {
     max-width: 100%;
     height: auto;
     max-height: 500px;
-}
-
-/* Drawn-in heading effect */
-.drawn-heading {
-    font-weight: 300;
-    font-size: 4rem;
-    margin-bottom: 20px;
-    line-height: 1.1;
-    overflow: hidden;
-}
-
-.drawn-text {
-    display: inline-block;
-    color: transparent;
-    position: relative;
-    -webkit-text-stroke: 1px white;
-    animation: revealText 2.5s ease forwards;
-    background: linear-gradient(90deg, white, white);
-    background-size: 0% 100%;
-    background-repeat: no-repeat;
-    background-clip: text;
-    -webkit-background-clip: text;
-}
-
-@keyframes revealText {
-    0% {
-        background-size: 0% 100%;
-    }
-    100% {
-        background-size: 100% 100%;
-    }
 }
 
 /* Projects Section */
