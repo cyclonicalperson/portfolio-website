@@ -21,11 +21,11 @@ const { title = "Pavle Arsenijević – Portfolio" } = Astro.props;
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>{title}</title>
 
-    <!-- Google Analytics -->
+    <!-- Google Analytics Script Loader -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0ZN882055"></script>
 </head>
 
 <body>
 <slot />
-<script type="module" src="/scripts/google_analytics.js"></script>
+<script type="module" src="/scripts/google-analytics.js"></script>
 </body>
