@@ -1,18 +1,16 @@
 ---
 const { project } = Astro.props;
-
-const cdnImage = `https://pavlearsenijevic.netlify.app/.netlify/images?url=${project.image}&w=800&q=80&fit=cover`;
 ---
 
 <div class="project-card">
 	<div class="image-container">
-		<img src={cdnImage} alt={project.title} class="project-image" />
+		<img src={project.image} alt={project.title} class="project-image" />
 	</div>
 	<div class="project-details">
 		<h4>{project.title}</h4>
 		<p>{project.description}</p>
 		<a href={project.github} target="_blank" class="github-link">
-			<img src="https://pavlearsenijevic.netlify.app/.netlify/images?url=/images/github-icon.png&w=48&q=90" alt="GitHub" class="github-icon" />
+			<img src="/images/github-icon.png" alt="GitHub" class="github-icon" />
 		</a>
 	</div>
 </div>
