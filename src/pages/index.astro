@@ -39,6 +39,9 @@ const projects = [
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
 	<title>Pavle Arsenijević – Portfolio</title>
+
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-L0ZN882055"></script>
 </head>
 <body>
 
@@ -80,18 +83,20 @@ const projects = [
 <!-- Contact Section -->
 <section class="contact-section">
 	<h3>Contact Me</h3>
-	<form action="https://formspree.io/f/xovdalgg" method="POST">
-		<label>
-			<input type="text" name="name" placeholder="Your Name" required />
-		</label>
-		<label>
-			<input type="email" name="email" placeholder="Your Email" required />
-		</label>
-		<label>
-			<textarea name="message" placeholder="Your Message" required></textarea>
-		</label>
-		<button type="submit">Send Message</button>
-	</form>
+	<div class="contact-wrapper">
+		<form action="https://formspree.io/f/mayrkzgj" method="POST">
+			<label>
+				<input type="text" name="name" placeholder="Your Name" required />
+			</label>
+			<label>
+				<input type="email" name="email" placeholder="Your Email" required />
+			</label>
+			<label>
+				<textarea name="message" placeholder="Your Message" required></textarea>
+			</label>
+			<button type="submit">Send Message</button>
+		</form>
+	</div>
 	<p>Email: <a href="mailto:cyclonicalperson@gmail.com">cyclonicalperson@gmail.com</a></p>
 	<p>Find me on <a href="https://github.com/cyclonicalperson">GitHub</a> |
 		<a href="https://www.linkedin.com/in/pavle-arsenijevic-365583334/">LinkedIn</a></p>
@@ -118,5 +123,9 @@ const projects = [
 		});
 	});
 </script>
+
+<!-- Google Analytics config -->
+<script type="module" src="/scripts/google_analytics.js"></script>
+
 </body>
 </html>

@@ -7,6 +7,25 @@
 
     .landing-content {
         flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .landing-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .project-card {
+        margin-bottom: 20px;
+    }
+
+    .contact-section form {
+        max-width: 70%;
+        margin: 20px auto;
+    }
+
+    .contact-wrapper {
+        padding: 0 12px;
     }
 }
 
@@ -75,10 +94,9 @@ html, body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* handles small screens too */
     gap: 30px;
     margin-top: 40px;
-    align-items: stretch;
 }
 
 /* Project Card */
@@ -104,8 +122,12 @@ html, body {
 .image-container {
     height: 200px;
     overflow: hidden;
-    border-bottom: 2px solid #333;
+    border-bottom: 3px solid #444;
+    border-left: 1px solid #444;
+    border-right: 1px solid #444;
+    border-top: 1px solid #444;
 }
+
 
 .project-image {
     width: 100%;
@@ -183,6 +205,12 @@ html, body {
     gap: 15px;
 }
 
+.contact-wrapper {
+    width: 100%;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
 .contact-section input,
 .contact-section textarea {
     width: 100%;
@@ -229,4 +257,31 @@ html, body {
     padding: 20px;
     text-align: center;
     font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.landing-text {
+    animation: fadeUp 1s ease-out 0.3s forwards;
+    opacity: 0;
+}
+
+.landing-image {
+    animation: fadeIn 1.2s ease-out 0.6s forwards;
+    opacity: 0;
 }
