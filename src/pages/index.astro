@@ -1,4 +1,5 @@
 ---
+import Layout from '../layouts/BaseLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import '../styles/global.css';
 
@@ -10,122 +11,85 @@ const projects = [
 ];
 ---
 
-<html lang="en">
-<head>
-	<meta name="google-site-verification" content="UDu6axVDyVNSAKcU3Dg_wGFqqLipCOqpCl-J5ZlaiB0" />
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<Layout title="Pavle Arsenijević – Portfolio">
 
-	<!-- SEO Meta Tags -->
-	<meta name="title" content="Pavle Arsenijević – Portfolio" />
-	<meta name="description" content="Portfolio of Pavle Arsenijevic – software engineer focused on desktop productivity apps and clean, functional design." />
-	<meta name="author" content="Pavle Arsenijevic" />
-	<meta name="robots" content="index, follow" />
-
-	<!-- Open Graph (for social sharing) -->
-	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://pavlearsenijevic.netlify.app/" />
-	<meta property="og:title" content="Pavle Arsenijević – Portfolio" />
-	<meta property="og:description" content="A collection of well-designed and functional desktop projects built by Pavle Arsenijević." />
-	<meta property="og:image" content="https://pavlearsenijevic.netlify.app/images/cs-illustration.png" />
-
-	<!-- Twitter Cards -->
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Pavle Arsenijević – Portfolio" />
-	<meta name="twitter:description" content="Software engineer portfolio of Pavle Arsenijević" />
-	<meta name="twitter:image" content="https://pavlearsenijevic.netlify.app/images/cs-illustration.png" />
-
-	<!-- Favicon -->
-	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-
-	<title>Pavle Arsenijević – Portfolio</title>
-
-	<!-- Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-L0ZN882055"></script>
-</head>
-<body>
-
-<!-- Modal -->
-<div class="modal">
-	<img src="" alt="Project Full View" />
-</div>
-
-<!-- Landing Page -->
-<header class="landing-page">
-	<div class="landing-content">
-		<div class="landing-text">
-			<h1>Welcome.</h1>
-			<p>
-				My name is Pavle Arsenijević, a Computer Science student based in Kragujevac, Serbia.
-				I make productivity-focused desktop applications with clean interfaces and seamless user experiences.
-				My work spans from small utilities to fully featured apps — all crafted with precision and purpose.
-			</p>
-		</div>
-		<div class="landing-image">
-			<img src="/images/cs-illustration.png" alt="CS Illustration">
-		</div>
+	<!-- Modal -->
+	<div class="modal">
+		<img src="" alt="Project Full View" />
 	</div>
-</header>
 
-<!-- Projects Section -->
-<section class="projects-section">
-	<div class="projects-content">
-		<h2>My Work</h2>
-		<p>A collection of projects I've made.</p>
-		<div class="projects-grid">
-			{projects.map(project => (
-				<ProjectCard project={project} />
-			))}
+	<!-- Landing Page -->
+	<header class="landing-page">
+		<div class="landing-content">
+			<div class="landing-text">
+				<h1>Welcome.</h1>
+				<p>
+					My name is Pavle Arsenijević, a Computer Science student based in Kragujevac, Serbia.
+					I make productivity-focused desktop applications with clean interfaces and seamless user experiences.
+					My work spans from small utilities to fully featured apps — all crafted with precision and purpose.
+				</p>
+			</div>
+			<div class="landing-image">
+				<img src="/images/cs-illustration.png" alt="CS Illustration">
+			</div>
 		</div>
-	</div>
-</section>
+	</header>
 
-<!-- Contact Section -->
-<section class="contact-section">
-	<h3>Contact Me</h3>
-	<div class="contact-wrapper">
-		<form action="https://formspree.io/f/mayrkzgj" method="POST">
-			<label>
-				<input type="text" name="name" placeholder="Your Name" required />
-			</label>
-			<label>
-				<input type="email" name="email" placeholder="Your Email" required />
-			</label>
-			<label>
-				<textarea name="message" placeholder="Your Message" required></textarea>
-			</label>
-			<button type="submit">Send Message</button>
-		</form>
-	</div>
-	<p>Email: <a href="mailto:cyclonicalperson@gmail.com">cyclonicalperson@gmail.com</a></p>
-	<p>Find me on <a href="https://github.com/cyclonicalperson">GitHub</a> |
-		<a href="https://www.linkedin.com/in/pavle-arsenijevic-365583334/">LinkedIn</a></p>
-</section>
+	<!-- Projects Section -->
+	<section class="projects-section">
+		<div class="projects-content">
+			<h2>My Work</h2>
+			<p>A collection of projects I've made.</p>
+			<div class="projects-grid">
+				{projects.map(project => (
+					<ProjectCard project={project} />
+				))}
+			</div>
+		</div>
+	</section>
 
-<footer class="copyright-footer">
-	<p>© 2025 Pavle Arsenijević</p>
-</footer>
+	<!-- Contact Section -->
+	<section class="contact-section">
+		<h3>Contact Me</h3>
+		<div class="contact-wrapper">
+			<form action="https://formspree.io/f/mayrkzgj" method="POST">
+				<label>
+					<input type="text" name="name" placeholder="Your Name" required />
+				</label>
+				<label>
+					<input type="email" name="email" placeholder="Your Email" required />
+				</label>
+				<label>
+					<textarea name="message" placeholder="Your Message" required></textarea>
+				</label>
+				<button type="submit">Send Message</button>
+			</form>
+		</div>
+		<p>Email: <a href="mailto:cyclonicalperson@gmail.com">cyclonicalperson@gmail.com</a></p>
+		<p>Find me on <a href="https://github.com/cyclonicalperson">GitHub</a> |
+			<a href="https://www.linkedin.com/in/pavle-arsenijevic-365583334/">LinkedIn</a></p>
+	</section>
 
-<script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const modal = document.querySelector('.modal');
-		const modalImg = modal.querySelector('img');
+	<footer class="copyright-footer">
+		<p>© 2025 Pavle Arsenijević</p>
+	</footer>
 
-		document.querySelectorAll('.project-image').forEach(img => {
-			img.addEventListener('click', () => {
-				modal.style.display = 'flex';
-				modalImg.src = img.src;
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+			const modal = document.querySelector('.modal');
+			const modalImg = modal.querySelector('img');
+
+			document.querySelectorAll('.project-image').forEach(img => {
+				img.addEventListener('click', () => {
+					modal.style.display = 'flex';
+					modalImg.src = img.src;
+				});
+			});
+
+			modal.addEventListener('click', () => {
+				modal.style.display = 'none';
 			});
 		});
+	</script>
 
-		modal.addEventListener('click', () => {
-			modal.style.display = 'none';
-		});
-	});
-</script>
-
-<!-- Google Analytics config -->
-<script type="module" src="/scripts/google_analytics.js"></script>
-
-</body>
-</html>
+</Layout>

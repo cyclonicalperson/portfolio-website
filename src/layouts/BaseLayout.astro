@@ -11,6 +11,15 @@ const { title = "Pavle Arsenijević – Portfolio" } = Astro.props;
     <meta name="robots" content="index, follow" />
     <meta name="author" content="Pavle Arsenijevic" />
     <meta name="google-site-verification" content="UDu6axVDyVNSAKcU3Dg_wGFqqLipCOqpCl-J5ZlaiB0" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pavlearsenijevic.netlify.app/" />
+    <meta property="og:title" content="Pavle Arsenijević – Portfolio" />
+    <meta property="og:description" content="A collection of well-designed and functional desktop projects built by Pavle Arsenijević." />
+    <meta property="og:image" content="https://pavlearsenijevic.netlify.app/images/cs-illustration.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pavle Arsenijević – Portfolio" />
+    <meta name="twitter:description" content="Software engineer portfolio of Pavle Arsenijević" />
+    <meta name="twitter:image" content="https://pavlearsenijevic.netlify.app/images/cs-illustration.png" />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <title>{title}</title>
 
@@ -19,5 +28,6 @@ const { title = "Pavle Arsenijević – Portfolio" } = Astro.props;
 </head>
 <body>
 <slot />
+<script type="module" src="/scripts/google_analytics.js"></script>
 </body>
 </html>
