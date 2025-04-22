@@ -92,6 +92,16 @@ html, body {
     margin: 0 auto;
 }
 
+.projects-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.projects-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* handles small screens too */
