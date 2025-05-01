@@ -1,8 +1,9 @@
 ---
 const { title = "Pavle Arsenijević – Portfolio" } = Astro.props;
 ---
-
-<head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Portfolio of Pavle Arsenijevic – software engineer focused on desktop productivity apps and clean, functional design." />
@@ -23,8 +24,9 @@ const { title = "Pavle Arsenijević – Portfolio" } = Astro.props;
 
     <!-- GoatCounter: Lightweight Analytics -->
     <script data-goatcounter="https://cyclonicalperson.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</head>
+  </head>
 
-<body>
-<slot />
-</body>
+  <body>
+    <slot />
+  </body>
+</html>
