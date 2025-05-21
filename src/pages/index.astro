@@ -12,10 +12,9 @@ const projects = [
 ---
 
 <Layout title="Pavle Arsenijević – Portfolio">
-
 	<!-- Modal -->
 	<div class="modal">
-		<img src="" alt="Project Full View" />
+		<img src="" alt="Fullscreen project image" aria-label="Fullscreen view of project image" />
 	</div>
 
 	<!-- Landing Page -->
@@ -33,7 +32,6 @@ const projects = [
 			</div>
 			<div class="landing-image">
 				<img src="/images/cs-illustration.png" alt="CS Illustration">
-
 			</div>
 		</div>
 	</header>
@@ -77,22 +75,62 @@ const projects = [
 		<p>© 2025 Pavle Arsenijević</p>
 	</footer>
 
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
+	<script is:inline>
+		console.log('index.astro: Script initializing at', new Date().toISOString());
+		setTimeout(() => {
+			console.log('index.astro: Running after 1000ms delay');
+			const images = document.querySelectorAll('.project-image');
+			const containers = document.querySelectorAll('.image-container');
 			const modal = document.querySelector('.modal');
-			const modalImg = modal.querySelector('img');
+			const modalImg = modal ? modal.querySelector('img') : null;
 
-			document.querySelectorAll('.project-image').forEach(img => {
-				img.addEventListener('click', () => {
-					modal.style.display = 'flex';
-					modalImg.src = img.src;
+			console.log(`index.astro: Found ${containers.length} .image-container elements`);
+			console.log(`index.astro: Found ${images.length} .project-image elements`);
+			console.log(`index.astro: Modal element:`, modal);
+
+			// Modal functionality
+			if (modal && modalImg) {
+				images.forEach((img, index) => {
+					img.style.cursor = 'pointer';
+					img.addEventListener('click', () => {
+						console.log(`index.astro: Opening modal for image #${index + 1}: ${img.src}`);
+						modalImg.src = img.src;
+						modalImg.alt = img.alt;
+						modal.style.display = 'flex';
+					});
 				});
-			});
+				modal.addEventListener('click', () => {
+					console.log('index.astro: Closing modal');
+					modal.style.display = 'none';
+				});
+			} else {
+				console.warn('index.astro: Modal or modalImg not found');
+			}
 
-			modal.addEventListener('click', () => {
-				modal.style.display = 'none';
-			});
-		});
+			// Animation trigger
+			if (containers.length > 0) {
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry, index) => {
+							if (entry.isIntersecting) {
+								console.log(`index.astro: .image-container #${index + 1} is visible at`, new Date().toISOString());
+								setTimeout(() => {
+									entry.target.classList.add('visible');
+									console.log(`index.astro: Added .visible to .image-container #${index + 1}`);
+								}, index * 200);
+								observer.unobserve(entry.target);
+							}
+						});
+					},
+					{ threshold: 0.5, rootMargin: '150px' }
+				);
+				containers.forEach((container, index) => {
+					console.log(`index.astro: Observing .image-container #${index + 1}`);
+					observer.observe(container);
+				});
+			} else {
+				console.error('index.astro: No .image-container elements found');
+			}
+		}, 1000);
 	</script>
-
 </Layout>
