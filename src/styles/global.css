@@ -27,6 +27,18 @@
     .contact-wrapper {
         padding: 0 12px;
     }
+
+    /* Animation for first card on mobile */
+    .projects-grid .project-card:nth-child(1) .image-container.visible:not(.animated)::after {
+        animation: fadeInOut 3s ease-in-out forwards;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Animation for first row on desktop (up to 4 cards) */
+    .projects-grid .project-card:nth-child(-n+4) .image-container.visible:not(.animated)::after {
+        animation: fadeInOut 3s ease-in-out forwards;
+    }
 }
 
 html, body {
@@ -100,12 +112,8 @@ html, body {
 }
 
 @keyframes revealText {
-    0% {
-        background-size: 0 100%;
-    }
-    100% {
-        background-size: 100% 100%;
-    }
+    0% { background-size: 0 100%; }
+    100% { background-size: 100% 100%; }
 }
 
 /* Projects Section */
@@ -197,10 +205,6 @@ html, body {
     font-weight: bold;
     font-family: 'Inter', sans-serif;
     pointer-events: none;
-}
-
-.image-container.visible::after {
-    animation: fadeInOut 3s ease-in-out forwards;
 }
 
 .image-container:hover::after {

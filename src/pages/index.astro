@@ -78,7 +78,7 @@ const projects = [
 	<script is:inline>
 		console.log('index.astro: Script initializing at', new Date().toISOString());
 		setTimeout(() => {
-			console.log('index.astro: Running after 1000ms delay');
+			console.log('index.astro: Running after 1500ms delay');
 			const images = document.querySelectorAll('.project-image');
 			const containers = document.querySelectorAll('.image-container');
 			const modal = document.querySelector('.modal');
@@ -109,14 +109,22 @@ const projects = [
 
 			// Animation trigger
 			if (containers.length > 0) {
+				const isMobile = window.innerWidth <= 768;
+				const cardsToAnimate = isMobile ? 1 : 2; // First card on mobile, first 4 on desktop
+				console.log(`index.astro: Animating ${cardsToAnimate} card(s) (mobile: ${isMobile})`);
 				const observer = new IntersectionObserver(
 					(entries) => {
 						entries.forEach((entry, index) => {
-							if (entry.isIntersecting) {
+							if (entry.isIntersecting && index < cardsToAnimate) {
 								console.log(`index.astro: .image-container #${index + 1} is visible at`, new Date().toISOString());
 								setTimeout(() => {
 									entry.target.classList.add('visible');
 									console.log(`index.astro: Added .visible to .image-container #${index + 1}`);
+									// Add animated class after animation duration (3s)
+									setTimeout(() => {
+										entry.target.classList.add('animated');
+										console.log(`index.astro: Added .animated to .image-container #${index + 1}`);
+									}, 3000);
 								}, index * 200);
 								observer.unobserve(entry.target);
 							}
@@ -125,12 +133,14 @@ const projects = [
 					{ threshold: 0.5, rootMargin: '150px' }
 				);
 				containers.forEach((container, index) => {
-					console.log(`index.astro: Observing .image-container #${index + 1}`);
-					observer.observe(container);
+					if (index < cardsToAnimate) {
+						console.log(`index.astro: Observing .image-container #${index + 1}`);
+						observer.observe(container);
+					}
 				});
 			} else {
 				console.error('index.astro: No .image-container elements found');
 			}
-		}, 1000);
+		}, 1500);
 	</script>
 </Layout>
